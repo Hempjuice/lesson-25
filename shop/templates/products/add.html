@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% import 'helpers/forms.html' as forms %}
+
+
+{% block title %}
+  Добавление товара
+{% endblock %}
+
+
+{% block body %}
+  <div class="row">
+    <div class="col col-12 col-md-8 col-lg-6">
+      <form method="post">
+        <div class="mb-3">
+          <label
+            for="product-name-id"
+            class="form-label"
+          >Product name:</label>
+          {{ forms.input('product-name', id='product-name-id', placeholder="Desktop") }}
+          <div id="product-name-help" class="form-text">Новый товар</div>
+        </div>
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="submit" class="btn btn-lg btn-outline-primary">Добавить</button>
+        </div>
+      </form>
+    </div> <!-- /col form -->
+
+    <div class="my-3 col">
+      <div class="alert alert-info" role="alert">
+        Добавьте товар на сайт. Название должно быть уникальным.
+      </div>
+    </div>
+
+  </div>
+
+  <hr>
+  <a href="{{ url_for('product_app.list') }}">back to products list</a>
+
+{% endblock %}
