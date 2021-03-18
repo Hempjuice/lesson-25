@@ -1,10 +1,10 @@
-SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://postgres:postgres@0.0.0.0:5432/postgres"
+SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://postgres:postgres@pg:5432/postgres"
 
 
 class Config:
     DEBUG = False
     TESTING = False
-    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
+    SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
