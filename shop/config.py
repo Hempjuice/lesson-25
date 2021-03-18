@@ -1,4 +1,4 @@
-SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://postgres:postgres@pg:5432/postgres"
+SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://postgres:postgres@pg:5432/shop"
 
 
 class Config:
