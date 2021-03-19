@@ -9,33 +9,18 @@
 
 
 {% block body %}
-  <div class="row">
-    <div class="col col-12 col-md-8 col-lg-6">
-      <form method="post">
-        <div class="mb-3">
-          <label
-            for="product-name-id"
-            class="form-label"
-          >Product name:</label>
-          {{ forms.input('product-name', id='product-name-id', placeholder="Desktop") }}
-          <div id="product-name-help" class="form-text">Новый товар</div>
-        </div>
-
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button type="submit" class="btn btn-lg btn-outline-primary">Добавить</button>
-        </div>
-      </form>
-    </div> <!-- /col form -->
-
-    <div class="my-3 col">
-      <div class="alert alert-info" role="alert">
-        Добавьте товар на сайт. Название должно быть уникальным.
-      </div>
-    </div>
-
-  </div>
-
-  <hr>
-  <a href="{{ url_for('product_app.list') }}">back to products list</a>
-
+  <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ url_for('main_page') }}">Главная</a></li>
+      <li class="breadcrumb-item"><a href="{{ url_for('product_app.list') }}">Каталог товаров</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Новый товар</li>
+    </ol>
+  </nav>
+  <h1>Добавление нового товара</h1>
+  <form method="post">
+    {{ forms.input('product-name', id='product-name-id', placeholder="Введите название") }}
+    <hr>
+    <button type="submit" class="btn btn-danger">Добавить</button>
+    <a class="btn btn-primary" href="{{ url_for('product_app.list') }}">Вернуться в каталог товаров</a>
+  </form>
 {% endblock %}
